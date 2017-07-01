@@ -47,7 +47,8 @@ def get_train_matrices(train_csv_path, train_path, img_size):
         targets = tags_to_vec(tags, labels_map)
         x.append(img)
         y.append(targets)
-    return np.asarray(x), np.asarray(y)
+    labels_map = {v: k for k, v in labels_map.items()}
+    return np.asarray(x), np.asarray(y), labels_map
 
 def get_test_matrices(test_dir, img_size):
     x_test = []

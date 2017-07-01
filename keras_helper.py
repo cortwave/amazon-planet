@@ -88,13 +88,6 @@ class KerasModel:
 
 
     def map_predictions(self, predictions, labels_map, thresholds):
-        """
-        Return the predictions mapped to their labels
-        :param predictions: the predictions from the predict() method
-        :param labels_map: the map
-        :param thresholds: The threshold of each class to be considered as existing or not existing
-        :return: the predictions list mapped to their labels
-        """
         predictions_labels = []
         for prediction in predictions:
             labels = [labels_map[i] for i, value in enumerate(prediction) if value > thresholds[i]]
