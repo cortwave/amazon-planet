@@ -69,7 +69,7 @@ class KerasModel:
         self.model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
 
         earlyStopping = EarlyStopping(monitor='val_loss', patience=3, verbose=0, mode='auto')
-        self.model.fit_generator(flow, steps_per_epoch=300, epochs=epochs, callbacks=[history, earlyStopping, *train_callbacks], validation_data=validation_data)	
+        self.model.fit_generator(flow, steps_per_epoch=5, epochs=epochs, callbacks=[history, earlyStopping, *train_callbacks], validation_data=validation_data)	
         fbeta_score = self._get_fbeta_score(self.model, validation_data)
         return [history.train_losses, history.val_losses, fbeta_score]
 

@@ -18,13 +18,6 @@ class ImageGenerator():
 
 
 def get_jpeg_data_files_paths():
-    """
-    Returns the input file folders path
-
-    :return: list of strings
-        The input file paths as list [train_jpeg_dir, test_jpeg_dir, test_jpeg_additional, train_csv_file]
-    """
-
     data_root_folder = os.path.abspath("../data/")
     train_jpeg_dir = os.path.join(data_root_folder, 'train-jpg')
     test_jpeg_dir = os.path.join(data_root_folder, 'test-jpg')
@@ -55,6 +48,16 @@ def get_train_matrices(train_csv_path, train_path, img_size):
         x.append(img)
         y.append(targets)
     return np.asarray(x), np.asarray(y)
+
+def get_test_matrices(test_dir, img_size):
+    x_test = []
+    x_test_filename = []
+    files_name = os.listdir(test_dir)
+    for file_name in tqdm(files_name):
+        img = load_image("{}/{}".format(test_dir, file_name), img_size)
+        x_test.append(img)
+        x_test_filename.append(file_name)
+    return np.array(x_test), x_test_filename
 
 
 def tags_to_vec(labels, labels_map):
