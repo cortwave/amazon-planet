@@ -10,6 +10,8 @@ from tensorflow.contrib.keras.api.keras.optimizers import Adam
 from tensorflow.contrib.keras.api.keras.callbacks import Callback, EarlyStopping
 from tensorflow.contrib.keras import backend
 
+from PIL import Image
+from tqdm import tqdm
 import numpy as np
 
 class LossHistory(Callback):
@@ -81,10 +83,16 @@ class KerasModel:
     def load_weights(self, weight_file_path):
         self.model.load_weights(weight_file_path)
 
+    def predict_image(self, image):
+        img = Image.fromarray(np.uint8(image * 255))
+        images = [img.copy().rotate(i) for i in [-90, 90, 180]]
+        images.append(img)
+        images = [np.asarray(image.convert("RGB"), dtype=np.float32) / 255 for image in images] 
+        return sum(self.model.predict(images)) / 4
+
 
     def predict(self, x_test):
-        predictions = self.model.predict(x_test)
-        return predictions
+        return [self.predict_image(img) for img in tqdm(x_test)]
 
 
     def map_predictions(self, predictions, labels_map, thresholds):

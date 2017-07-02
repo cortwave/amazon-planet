@@ -23,6 +23,7 @@ get_test_matrices	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.p
 get_train_generator	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^    def get_train_generator(self, x, y, batch_size=128):$/;"	m	language:Python	class:ImageGenerator
 get_train_matrices	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^def get_train_matrices(train_csv_path, train_path, img_size):$/;"	f	language:Python
 Image	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^from PIL import Image$/;"	i	language:Python
+Image	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^from PIL import Image$/;"	i	language:Python
 ImageDataGenerator	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^from keras.preprocessing.image import ImageDataGenerator$/;"	i	language:Python
 ImageGenerator	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^class ImageGenerator():$/;"	c	language:Python
 k	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^import tensorflow.contrib.keras.api.keras as k$/;"	i	language:Python
@@ -39,11 +40,13 @@ on_epoch_end	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^
 os	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^import os$/;"	i	language:Python
 pd	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^import pandas as pd$/;"	i	language:Python
 predict	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^    def predict(self, x_test):$/;"	m	language:Python	class:KerasModel
+predict_image	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^    def predict_image(self, image):$/;"	m	language:Python	class:KerasModel
 save_weights	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^    def save_weights(self, weight_file_path):$/;"	m	language:Python	class:KerasModel
 Sequential	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^from tensorflow.contrib.keras.api.keras.models import Sequential$/;"	i	language:Python
 tags_to_vec	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^def tags_to_vec(labels, labels_map):$/;"	f	language:Python
 tensorflow	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^import tensorflow.contrib.keras.api.keras as k$/;"	i	language:Python
 tqdm	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^from tqdm import tqdm$/;"	i	language:Python
+tqdm	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^from tqdm import tqdm$/;"	i	language:Python
 train_test_split	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^from sklearn.model_selection import train_test_split$/;"	i	language:Python
 _get_fbeta_score	/Users/westside/dev/python/jupyter/amazon-planet/keras_helper.py	/^    def _get_fbeta_score(self, model, validation_data):$/;"	m	language:Python	class:KerasModel
 __init__	/Users/westside/dev/python/jupyter/amazon-planet/data_helper.py	/^    def __init__(self):$/;"	m	language:Python	class:ImageGenerator
