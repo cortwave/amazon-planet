@@ -32,6 +32,11 @@ class KerasModel:
         self.model = Sequential()
         self.model.add(BatchNormalization(input_shape=(*img_size, img_channels)))
 
+        self.model.add(Conv2D(16, (3, 3), padding='same', activation='relu'))
+        self.model.add(Conv2D(16, (3, 3), activation='relu'))
+        self.model.add(MaxPooling2D(pool_size=2))
+        self.model.add(Dropout(0.25))
+
         self.model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
         self.model.add(Conv2D(32, (3, 3), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=2))
@@ -57,6 +62,9 @@ class KerasModel:
         self.model.add(Dense(512, activation='relu'))
         self.model.add(BatchNormalization())
         self.model.add(Dropout(0.5))
+        self.model.add(Dense(256, activation='relu'))
+        self.model.add(BatchNormalization())
+        self.model.add(Dropout(0.25))
         self.model.add(Dense(output_size, activation='sigmoid'))
 
 
@@ -65,13 +73,13 @@ class KerasModel:
         return fbeta_score(validation_data[1], np.array(p_valid) > 0.2, beta=2, average='samples')
 
    
-    def fit(self, flow, epochs, lr, validation_data, train_callbacks=[]):
+    def fit(self, flow, epochs, lr, validation_data, train_callbacks=[], batches=300):
         history = LossHistory()
         opt = Adam(lr=lr)
         self.model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
 
         earlyStopping = EarlyStopping(monitor='val_loss', patience=3, verbose=0, mode='auto')
-        self.model.fit_generator(flow, steps_per_epoch=5, epochs=epochs, callbacks=[history, earlyStopping, *train_callbacks], validation_data=validation_data)	
+        self.model.fit_generator(flow, steps_per_epoch=batches, epochs=epochs, callbacks=[history, earlyStopping, *train_callbacks], validation_data=validation_data)	
         fbeta_score = self._get_fbeta_score(self.model, validation_data)
         return [history.train_losses, history.val_losses, fbeta_score]
 
@@ -87,7 +95,7 @@ class KerasModel:
         img = Image.fromarray(np.uint8(image * 255))
         images = [img.copy().rotate(i) for i in [-90, 90, 180]]
         images.append(img)
-        images = [np.asarray(image.convert("RGB"), dtype=np.float32) / 255 for image in images] 
+        images = np.asarray([np.asarray(image.convert("RGB"), dtype=np.float32) / 255 for image in images])
         return sum(self.model.predict(images)) / 4
 
 

@@ -1,0 +1,4 @@
+weights.best.hdf5
+.idea
+__pycache__
+submission_file.csv
