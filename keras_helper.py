@@ -35,27 +35,27 @@ class KerasModel:
         self.model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
         self.model.add(Conv2D(32, (3, 3), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=2))
-        self.model.add(Dropout(0.25))
+        self.model.add(Dropout(0.3))
 
         self.model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
         self.model.add(Conv2D(64, (3, 3), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=2))
-        self.model.add(Dropout(0.25))
+        self.model.add(Dropout(0.3))
 
         self.model.add(Conv2D(128, (3, 3), padding='same', activation='relu'))
         self.model.add(Conv2D(128, (3, 3), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=2))
-        self.model.add(Dropout(0.25))
+        self.model.add(Dropout(0.3))
 
         self.model.add(Conv2D(256, (3, 3), padding='same', activation='relu'))
         self.model.add(Conv2D(256, (3, 3), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=2))
-        self.model.add(Dropout(0.25))
+        self.model.add(Dropout(0.3))
 
         self.model.add(Conv2D(512, (3, 3), padding='same', activation='relu'))
         self.model.add(Conv2D(512, (3, 3), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=2))
-        self.model.add(Dropout(0.25))
+        self.model.add(Dropout(0.3))
 
         self.model.add(Flatten())
 
@@ -65,19 +65,19 @@ class KerasModel:
 
         self.model.add(Dense(output_size, activation='sigmoid'))
 
-    def get_fbeta_score(self, validation_generator, validation_labels, validation_batch, verbose=True):
-        p_valid = self.model.predict_generator(validation_generator, steps=len(validation_labels) // validation_batch)
-        thresholds = self.optimise_f2_thresholds(validation_labels, p_valid, verbose=verbose)
-        return fbeta_score(validation_labels, np.array(p_valid) > thresholds, beta=2, average='samples'), thresholds
+    def get_fbeta_score(self, validation_data, verbose=True):
+        p_valid = self.model.predict(validation_data[0])
+        thresholds = self.optimise_f2_thresholds(validation_data[1], p_valid, verbose=verbose)
+        return fbeta_score(validation_data[1], np.array(p_valid) > thresholds, beta=2, average='samples'), thresholds
 
-    def fit(self, flow, epochs, lr, validation_generator, validation_labels, validation_batch, train_callbacks=[], batches=300):
+    def fit(self, flow, epochs, lr, validation_data, train_callbacks=[], batches=300):
         history = LossHistory()
         opt = Adam(lr=lr)
         self.model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])
 
         earlyStopping = EarlyStopping(monitor='val_loss', patience=3, verbose=0, mode='auto')
-        self.model.fit_generator(flow, steps_per_epoch=batches, epochs=epochs, validation_steps=len(validation_labels) // validation_batch, callbacks=[history, earlyStopping, *train_callbacks], validation_data=validation_generator)
-        fb_score, thresholds = self.get_fbeta_score(validation_generator, validation_labels, validation_batch, verbose=False)
+        self.model.fit_generator(flow, steps_per_epoch=batches, epochs=epochs, callbacks=[history, earlyStopping, *train_callbacks], validation_data=validation_data)
+        fb_score, thresholds = self.get_fbeta_score(validation_data, verbose=False)
         return [history.train_losses, history.val_losses, fb_score, thresholds]
 
     def save_weights(self, weight_file_path):
@@ -87,7 +87,7 @@ class KerasModel:
         self.model.load_weights(weight_file_path)
 
     def predict_image(self, image):
-        img = Image.fromarray(np.uint8(image))
+        img = Image.fromarray(np.uint8(image * 255))
         images = [img.copy().rotate(i) for i in [-90, 90, 180]]
         images.append(img)
         images = np.asarray([np.asarray(image.convert("RGB"), dtype=np.float32) / 255 for image in images])

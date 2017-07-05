@@ -10,19 +10,10 @@ from tqdm import tqdm
 class ImageGenerator():
     def __init__(self):
         self.datagen = ImageDataGenerator(
-            rescale=1./255,
 	    horizontal_flip=True,
             vertical_flip=True)
 
     def get_train_generator(self, x, y, batch_size=128):
-        return self.datagen.flow(x, y, batch_size=batch_size)
-
-
-class ValidGenerator():
-    def __init__(self):
-        self.datagen = ImageDataGenerator(rescale=1./255)
-
-    def get_valid_generator(self, x, y, batch_size=128):
         return self.datagen.flow(x, y, batch_size=batch_size)
 
 
@@ -41,7 +32,7 @@ def get_jpeg_data_files_paths():
 def load_image(path, img_size):
     img = Image.open(path)
     img.thumbnail(img_size)
-    img_array = np.asarray(img.convert("RGB"), dtype=np.int8)
+    img_array = np.asarray(img.convert("RGB"), dtype=np.float32) / 255
     return img_array
 
 def get_train_matrices(train_csv_path, train_path, img_size):
