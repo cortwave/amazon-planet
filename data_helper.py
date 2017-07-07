@@ -27,8 +27,6 @@ class ValidGenerator():
         return self.datagen.flow(x, y, batch_size=batch_size)
 
 
-
-
 def get_jpeg_data_files_paths():
     data_root_folder = os.path.abspath("../data/")
     train_jpeg_dir = os.path.join(data_root_folder, 'train-jpg')
@@ -47,6 +45,7 @@ def load_image(path, img_size):
     img_array = np.asarray(img.convert("RGB"), dtype=np.int8)
     return img_array
 
+
 def get_train_matrices(train_csv_path, train_path, img_size):
     x = []
     y = []
@@ -60,6 +59,7 @@ def get_train_matrices(train_csv_path, train_path, img_size):
         y.append(targets)
     labels_map = {v: k for k, v in labels_map.items()}
     return np.asarray(x), np.asarray(y), labels_map
+
 
 def get_test_matrices(test_dir, img_size):
     x_test = []
@@ -77,3 +77,4 @@ def tags_to_vec(labels, labels_map):
     for t in labels.split(' '):
         targets[labels_map[t]] = 1
     return np.asarray(targets)
+

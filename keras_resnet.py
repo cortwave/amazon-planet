@@ -94,8 +94,6 @@ class ResnetModel:
         :param resolution:
         :return: thresholds array
         """
-        print(type(p))
-        print(type(y))
 
         def mf(x):
             p2 = np.zeros_like(p)

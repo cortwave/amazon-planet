@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04c96049-45e2-4b69-bb2e-cdce1d740f25" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ResNet50.ipynb" afterPath="$PROJECT_DIR$/ResNet50.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_helper.py" afterPath="$PROJECT_DIR$/data_helper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keras_resnet.py" afterPath="$PROJECT_DIR$/keras_resnet.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,15 +19,12 @@
       <file leaf-file-name="data_helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
-              <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+            <state relative-caret-position="1314">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
-                <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-                <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-                <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-                <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-                <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+                <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+                <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,11 +33,9 @@
       <file leaf-file-name="keras_helper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/keras_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="79" column="82" lean-forward="false" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="414">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,6 +75,7 @@
         <option value="$PROJECT_DIR$/solution.ipynb" />
         <option value="$PROJECT_DIR$/data_helper.py" />
         <option value="$PROJECT_DIR$/keras_helper.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
       </list>
     </option>
   </component>
@@ -103,7 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -118,8 +115,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -133,7 +134,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.model">
+  <component name="RunManager" selected="Python.scratch">
     <configuration default="false" name="model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -147,6 +148,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="my_custom" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_helper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="my_custom" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -217,12 +236,14 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.model" />
+      <item index="1" class="java.lang.String" itemvalue="Python.scratch" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.model" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.scratch" />
+        <item index="1" class="java.lang.String" itemvalue="Python.model" />
       </list>
     </recent_temporary>
   </component>
@@ -241,11 +262,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1212" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18867925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26835904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26793823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -272,15 +294,40 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data_helper.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/keras/preprocessing/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8298">
+          <caret line="461" column="8" lean-forward="false" selection-start-line="461" selection-start-column="8" selection-end-line="461" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keras_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="79" column="82" lean-forward="false" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1098">
           <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -297,9 +344,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1098">
           <caret line="75" column="82" lean-forward="false" selection-start-line="75" selection-start-column="82" selection-end-line="75" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -309,11 +354,8 @@
           <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -330,9 +372,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="50" column="62" lean-forward="true" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -342,11 +382,8 @@
           <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -363,9 +400,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="954">
           <caret line="67" column="64" lean-forward="true" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -375,11 +410,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -399,11 +431,8 @@
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -442,26 +471,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+        <state relative-caret-position="1314">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1499234749552" expanded="true" signature="1213:1764" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1483:1657" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1808:2112" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="1926:2067" ph="..." />
-            <marker date="1499234749552" expanded="true" signature="2151:2289" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="203:271" ph="..." />
+            <marker date="1499469704372" expanded="true" signature="227:271" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keras_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="79" column="82" lean-forward="false" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="414">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
