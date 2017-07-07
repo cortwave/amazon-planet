@@ -2,3 +2,4 @@ weights.best.hdf5
 .idea
 __pycache__
 submission_file.csv
+resnet_weights.best.hdf5
