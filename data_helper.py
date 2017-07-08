@@ -11,7 +11,6 @@ class ImageGenerator():
     def __init__(self):
         self.datagen = ImageDataGenerator(
             rescale=1./255,
-            zoom_range=0.2,
 	    horizontal_flip=True,
             vertical_flip=True)
 
